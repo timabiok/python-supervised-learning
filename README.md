@@ -23,6 +23,6 @@ docker run -it psl:latest /bin/bash
 docker-compose up --build -d
 ```
 
-## Refs
+## References
 
 <https://conda.io/projects/conda/en/latest/user-guide/cheatsheet.html>
