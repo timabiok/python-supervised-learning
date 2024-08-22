@@ -1,0 +1,5 @@
+Dockerfile
+docke-compose.yml
+.git
+*.md
+.cache

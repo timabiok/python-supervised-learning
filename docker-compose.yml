@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    container_name: psl_postgres
+    environment:
+      POSTGRES_USER: changeit
+      POSTGRES_PASSWORD: changeit
+      POSTGRES_DB: psl_db
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: psl_app
+    image: psl:latest
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=changeit
+      - POSTGRES_PASSWORD=changeit
+      - POSTGRES_DB=psl_db
+      - POSTGRES_PORT=5432
+    volumes:
+      - .:/app
+    ports:
+      - 5001:5001
+   
